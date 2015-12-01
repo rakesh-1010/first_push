@@ -39,6 +39,7 @@ gem "koala", "~> 2.2"
 gem "mail_view", "~> 2.0.4"
 gem 'zeroclipboard-rails'
 gem 'social-share-button'
+gem 'thor'
 
 
 group :development, :test do
