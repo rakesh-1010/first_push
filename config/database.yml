@@ -7,6 +7,15 @@ development:
   host: 127.0.0.1
   port: 3306
 
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: sweepstake
+  username: root
+  password: bvc9090
+  pool: 5
+  timeout: 5000
+
 production:
   adapter: mysql2
   encoding: utf8
@@ -16,11 +25,3 @@ production:
   pool: 5
   timeout: 5000
 
-test:
-  adapter: mysql2
-  encoding: utf8
-  database: sweepstake
-  username: root
-  password: bvc9090
-  pool: 5
-  timeout: 5000
