@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sweepstake_id: 1
+  participant_id: 1
+  admin_user_id: 1
+
+two:
+  sweepstake_id: 1
+  participant_id: 1
+  admin_user_id: 1

@@ -1,0 +1,10 @@
+%a#sweepframe{:href => "https://production-sweepstakes.herokuapp.com/display/c9b506", :rel => "nofollow"} Sweepstake
+%script{:async => "true", :src => "https://production-sweepstakes.herokuapp.com/sweepstake_iframe.js", :type => "text/javascript"}
+.row
+  .col-xs-2
+    = label_tag 'Select Sweepstake'
+  .col-xs-7
+    = collection_select :sweep, :sweep_name, @sweepstake, :id, :sweepstake_name, prompt: true
+
+#result
+  = render(:partial => 'winner', :locals => {:winner => @winner_record })

@@ -1,0 +1,175 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic)
+
+/* Layout */
+
+.container-fluid.admin
+  min-height: 100vh
+  background: #222
+
+.main-header
+  > .navbar
+    margin-bottom: 0
+    margin-left: 278px
+    min-height: 55px
+    border-radius: 0
+    background-color: black
+  .navbar-custom-menu
+    float: right
+  .logo
+    -webkit-transition: width 0.3s ease-in-out
+    -o-transition: width 0.3s ease-in-out
+    transition: width 0.3s ease-in-out
+    display: block
+    float: left
+    font-size: 20px
+    line-height: 50px
+    text-align: center
+    width: 230px
+    color: white
+
+.content-header
+  position: relative
+  padding: 15px 15px 0 15px
+
+@media (max-width: 991px)
+  .navbar-custom-menu .navbar-nav
+    > li
+      float: left
+      > a
+        padding-top: 15px
+        padding-bottom: 15px
+        line-height: 20px
+    margin: 0
+    float: left
+
+@media (max-width: 767px)
+  .main-header
+    position: relative
+    .logo
+      width: 104%
+      float: none
+    .navbar
+      margin-left: -1px !important
+      width: 104%
+      float: none
+      margin: 0
+    .navbar-custom-menu
+      float: right
+
+/*Dropdowns in general */
+
+.navbar-nav >
+  .notifications-menu > .dropdown-menu > li .menu, .messages-menu > .dropdown-menu > li .menu
+    max-height: 200px
+    margin: 0
+    padding: 0
+    list-style: none
+    overflow-x: hidden
+    width: 280px
+  .notifications-menu > .dropdown-menu > li .menu > li > a, .messages-menu > .dropdown-menu > li .menu > li > a
+    display: block
+    white-space: nowrap
+    /* Prevent text from breaking */
+    border-bottom: 1px solid #f4f4f4
+  .notifications-menu > .dropdown-menu > li .menu > li > a
+    color: #444444
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    padding: 10px
+  .user-menu > .dropdown-menu
+    left: -67%
+    border-top-right-radius: 0
+    border-top-left-radius: 0
+    padding: 1px 0 0 0
+    border-top-width: 0
+    width: 280px
+    >
+      li.user-header
+        height: 175px
+        padding: 10px
+        text-align: center
+        > p
+          z-index: 5
+          color: silver
+          font-size: 17px
+          margin-top: 10px
+      .user-footer
+        background-color: #f9f9f9
+        padding: 10px
+        &:before
+          content: " "
+          display: table
+        &:after
+          content: " "
+          display: table
+          clear: both
+        .btn-default
+          color: #666666
+
+@media (max-width: 991px)
+  .navbar-nav > .user-menu > .dropdown-menu > .user-footer .btn-default:hover
+    background-color: #f9f9f9
+
+.navbar-custom-menu > .navbar-nav > li > .dropdown-menu
+  position: absolute
+  right: 0
+  left: auto
+
+@media (max-width: 991px)
+  .navbar-custom-menu > .navbar-nav
+    float: right
+    > li
+      position: static
+      > .dropdown-menu
+        position: absolute
+        right: 5%
+        left: auto
+        border: 1px solid #ddd
+        background: #fff
+
+.register
+  margin: 0% -1.5% 0.1% 17% !important
+  padding-top: 2%
+  padding-right: 2%
+  padding-left: 2%
+  min-height: 100vh
+  background: whitesmoke
+  -webkit-transition: all linear 0.3s
+  -o-transition: all linear 0.3s
+  transition: all linear 0.3s
+  z-index: 820
+  &.slide-register
+    margin-left: 6% !important
+
+.fa
+  width: 20px
+
+div.header
+  background-color: #222
+  margin-left: -3%
+
+#menu-toggle
+  float: left
+  padding: 15px 15px
+  font-family: fontAwesome
+
+@media (min-width: 768px)
+  .navbar-custom-menu .navbar-nav > li > a
+    padding-top: 14px
+    padding-bottom: 14px
+    height: 54px
+    
+
+// error page
+.error-template.container-fluid
+  margin: auto
+  height: 50%
+  width: 50%
+  border: 1px solid #f4f4f4
+  background: #01DFA5
+  border-radius: 5px
+  
+// img.img-responsive.error
+  // max-width: 100%
+  // height: auto

@@ -1,0 +1,54 @@
+%h1 All Participants
+%br/
+.table-responsive
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Email
+        %th Number
+        %th{style: "text-align: center"} Mark Winner
+    %tbody
+      - @participants.each do |participant|
+        %tr{:class=> "#{cycle("info","default")}"}
+          %td
+            = participant.participant_name
+          %td
+            = participant.email
+          %td
+            = participant.participant_number
+          %td{:align => "center"}
+              
+            - if (@winner_count < @sweepstake.winner_count)
+              = link_to manual_winner_participants_path(:sweepstake_id => participant.sweepstake_id ,:participant_id => participant.id),{"data-no-turbolink" => ""} do
+                .btn.btn-xs.btn-success
+                  %i.fa.fa-trophy
+                  %strong Select as Winner
+            - else
+              .disable-me
+                = link_to manual_winner_participants_path(:sweepstake_id => participant.sweepstake_id ,:participant_id => participant.id),{"data-no-turbolink" => ""} do
+                  %i.fa.fa-ban
+  %br
+    %b Total Winners:
+    %b= @sweepstake.winner_count
+    %br
+      %br
+        - if (@winner_count < @sweepstake.winner_count)
+          = link_to random_winner_participants_path(:id=>@sweepstake.id) do
+            .btn.btn-md.btn-info
+              %i.fa.fa-trophy
+              %strong Choose winners Randomly 
+            %br/
+        - else
+          .disable-me
+            = link_to random_winner_participants_path(:id=>@sweepstake.id) do
+              .btn.btn-md.btn-danger
+                %i.fa.fa-beer
+                %strong Winner table full
+            %br/
+        = link_to view_winners_participants_path(:id=>@sweepstake.id),{"data-no-turbolink" => ""}  do
+          .btn.btn-warning.pull-right
+            %i.fa.fa-binoculars
+            %strong View winners
+          %br/
+        / <b> Lucky Winner </b><br>

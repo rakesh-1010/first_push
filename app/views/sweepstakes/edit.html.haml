@@ -1,0 +1,4 @@
+.edit-sweepstake
+  %h2 Edit Sweepstake
+  =form_for(:sweepstake, :url => sweepstake_path(:id => @sweepstake.id),:method => :put ,:html => {:multipart => true, :id => 'sweepstake'}) do |f|
+    = render(:partial => 'sweepstake_edit', :locals => {:f => f })

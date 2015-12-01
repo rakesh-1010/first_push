@@ -1,0 +1,19 @@
+%html
+  %head
+    %title Sweepstakes
+    = stylesheet_link_tag "application" , :media => "all"
+    = csrf_meta_tags
+    = javascript_include_tag "application"
+  %body
+    .container-fluid.admin
+      .header
+        = render "shared/navigation/topnavigation.html.haml"
+   
+      = render "shared/navigation/sidebar.html.haml" 
+      #panel
+      .register
+        = render "shared/messages.html.haml"
+        = yield
+
+    .footer
+      = render "shared/headerfooter/footer.html"

@@ -1,0 +1,20 @@
+=form_for(:participant, :url => "/participants", :method => :post, :html => {:id => 'register_form', :class => 'form-horizontal register'}) do |f|
+  .row
+    .col-xs-4
+      = f.label :name, :class => "col-sm-2 control-label"
+    .col-xs-4
+    = f.text_field :name, :class => "form-control input-sm"
+  .row
+    .col-xs-4
+      = f.label :email, :class => "col-sm-2 control-label"
+    .col-xs-4
+      = f.text_field :email, :class => "form-control input-sm"
+  .row
+    .col-xs-4
+      = f.label :mobile_no, :class => "col-sm-2 control-label"
+    .col-xs-4
+      = f.text_field :mobile_no, :class => "form-control input-sm"
+  .row
+    .col-xs-4
+    .col-xs-4
+      = f.submit "Save",:class=> "btn btn-success",:onclick => 'participantFormValidate();'

@@ -1,0 +1,2 @@
+class SweepstakesShareMailer < ApplicationMailer
+end

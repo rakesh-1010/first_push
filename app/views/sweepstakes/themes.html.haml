@@ -1,0 +1,43 @@
+
+%h2 Select Theme
+.col-md-2
+  %h3 Comic
+  = link_to (image_tag "theme/comic_sel.png", :style => "height: 200px",:class => "on-hover"  ), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "comic",:class => "on-hover" )
+  %br/
+.col-md-2
+  %h3 Rain
+  = link_to (image_tag "theme/rain_sel.png", :style => "height: 200px",:class => "on-hover" ), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "rain")
+  %br/
+.col-md-2
+  %h3 Night
+  = link_to (image_tag "theme/night_sel.png", :style => "height: 200px",:class => "on-hover" ), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "night")
+  %br/
+.col-md-2
+  .row
+    %h3 Paper
+    = link_to (image_tag "theme/paper_sel.png", :style => "height: 200px",:class => "on-hover" ), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "paper")
+    %br/
+.col-md-2
+  .row
+    %h3 Money
+    = link_to (image_tag "theme/money_sel.png", :style => " height: 200px",:class => "on-hover"), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "money")
+    %br/
+.col-md-2
+  .row
+    %h3 Simple
+    = link_to (image_tag "theme/basic_sel.png", :style => " height: 200px",:class => "on-hover"), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "basic")
+    %br/
+.col-md-2
+  .row
+    %h3 HOLI
+    = link_to (image_tag "theme/color.png", :style => " height: 200px",:class => "on-hover"), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "holi")
+.col-md-2
+  .row
+    %h3 Valentines
+    = link_to (image_tag "theme/love.png", :style => " height: 200px",:class => "on-hover"), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "love")
+.col-md-2
+  .row
+    %h3 Diwali
+    = link_to (image_tag "theme/deepali.png", :style => " height: 200px",:class => "on-hover"), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "firework")
+
+     

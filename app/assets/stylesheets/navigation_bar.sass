@@ -1,0 +1,96 @@
+/* -----------------For Left Sidebar-------------------*/
+#sidebar-wrapper
+  position: absolute
+  margin-left: -150px
+  margin-top: 0px
+  left: 0px
+  width: 230px
+  background: #222
+  height: 100vh !important
+  z-index: 10000
+  transition: all .4s ease 0s
+
+.sidebar-nav
+  margin: 0
+  padding: 0
+  background: #222
+
+#wrapper.active
+  padding-left: 150px
+  #sidebar-wrapper
+    left: 150px
+
+.sidebar-nav
+  li
+    line-height: 40px
+    text-indent: 20px
+    a
+      color: #999999
+      display: block
+      text-decoration: none
+      &:hover
+        color: #fff
+        background: rgba(255, 255, 255, 0.2)
+        text-decoration: none
+      &:active, &:focus
+        text-decoration: none
+
+#main_icon
+  float: right
+  padding-right: 65px
+  padding-top: 20px
+  color: white
+
+.sub_icon
+  float: right
+  padding-right: 65px
+  padding-top: 10px
+  color: white
+
+/* --------------------Right Side bar------------------------*/
+#panel
+  top: 50px
+  position: fixed
+  background: #444
+  color: #fff
+  height: 100%
+  width: 150px 
+  right: -300px
+  transition: right 0.4s ease-in-out
+  -o-transition: right 0.4s ease-in-out
+  -ms-transition: right 0.4s ease-in-out
+  -moz-transition: right 0.4s ease-in-out
+  -webkit-transition: right 0.4s ease-in-out
+  z-index: 10000
+
+#panel h2, #panel p
+  padding: 25px
+
+#panelCaller
+  position: fixed
+  top: 0px
+  right: -6px
+  padding: 19px 3px
+  height: 55px
+  background-color: #222
+
+#panel:hover
+  right: 0px
+
+/*---------------- When minimized the screen---------------- */
+@media (max-width: 1100px) 
+  #wrapper.active
+    .sidebar-footer
+      left: -230px 
+    #sidebar-wrapper
+      left: -80px
+  .register
+    margin-left: -3.3%!important
+    margin-right: -3.3%!important
+  .register.slide-register
+    margin-left: 15.3%!important
+    margin-right: -3.5%!important
+  #panelCaller
+    height: 50px
+    
+ 

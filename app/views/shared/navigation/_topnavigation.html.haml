@@ -1,0 +1,116 @@
+%header.main-header
+  / Logo
+  %a.logo{:href => "#"}
+    CEM Play
+  / Header Navbar: style can be found in header.less
+  %nav.navbar.navbar-static-top{:role => "navigation"}
+    / Sidebar toggle button
+    %a#menu-toggle{"data-toggle" => "offcanvas", :href => "#", :role => "button"}
+      %span.glyphicon.glyphicon-align-justify
+    .navbar-custom-menu
+      %ul.nav.navbar-nav
+        / Messages: style can be found in dropdown.less
+        / %li.dropdown.messages-menu
+        /   %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+        /     %i.fa.fa-envelope-o
+        /   %ul.dropdown-menu
+        /     %li
+        /       %a{:href => '#'} New message
+        /     %li
+        /       %a{:href => '#'} Inbox
+        /     %li
+        /       %a{:href => '#'} Outbox
+        /     %li
+        /       %a{:href => '#'} Trash
+        /     %li.footer
+        /       %a{:href => "#"} See All Messages
+        / Notifications: style can be found in dropdown.less
+        %li.dropdown.notifications-menu
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}        
+            %i.fa.fa-bell-o
+            - pcpt = current_admin_user.participants.where("created_at like ?", "%#{Date.today}%").count
+            - swp = current_admin_user.sweepstakes.where("end_date like ?", "%#{Date.today}%").count
+            - if( pcpt+swp > 0)   
+              %i.fa.fa-exclamation{:style => "position: absolute;top: 2px; left: 28px;color: red"}
+          %ul.dropdown-menu
+            %li
+              / inner menu: contains the actual data
+              %ul.menu
+                - unless current_admin_user.participants.empty?                  
+                  - unless pcpt < 1
+                    %li
+                      %a{:href => "/participants"}
+                        %i.fa.fa-warning.text-aqua
+                        #{pcpt} new members participated today.
+                - unless current_admin_user.sweepstakes.empty?   
+                  - if swp > 0
+                    %li
+                      %a{:href => "/sweepstakes"}
+                        %i.fa.fa-calendar.text-red
+                        You have #{swp} sweepstakes ending today.
+                / %li
+                /   %a{:href => "#"}
+                /     %i.fa.fa-shopping-cart.text-green
+                /     25 sales made
+                / %li
+                /   %a{:href => "#"}
+                /     %i.fa.fa-user.text-red
+                /     You changed your username
+            / %li.footer
+            /   %a{:href => "#"} View all
+        / User Account: style can be found in dropdown.less
+        %li.dropdown.user.user-menu
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            -if (current_admin_user.avatar_file_name == nil)
+              = image_tag("default-profile.png",:style => "height: 30px; margin-top: -3%") 
+            - else  
+              = image_tag current_admin_user.avatar.url(:thumb),:style => "height: 30px; margin-top: -3%"
+            %span.hidden-xs
+              = current_admin_user.name
+          %ul.dropdown-menu
+            / User image
+            %li.user-header{style: "height: 150px "}
+              -if (current_admin_user.avatar_file_name == nil)
+                = image_tag("default-profile.png",style: "height: 100px ") 
+              - else
+                = image_tag current_admin_user.avatar.url(:thumb),style: "height: 100px "
+              %p
+              %span.col-xs-12.label.label-primary.user-name
+                = current_admin_user.name
+            / Menu Footer
+            %li.user-footer
+              .pull-left
+                %a{:href => "/admins/#{current_admin_user.id}/edit"}
+                  .btn.btn-default.btn-flat
+                    %i.fa.fa-edit 
+                    Edit
+              .pull-right
+                %a{:href => "/admin_user/sign_out"}
+                  .btn.btn-default.btn-flat
+                    %i.fa.fa-sign-out    
+                    Sign out
+        / Control Sidebar Toggle Button
+        %li
+          #panel
+            #panelCaller
+              %a 
+                %i.fa.fa-sliders
+            %p{:style => "color: white;font-weight: bold"} Sweepstake Best Practices             
+            %ul{:style => "color: yellowgreen;font-weight: bold"} 
+              %li Have a desirable prize
+              %br
+              %li Keep your entry form simple
+              %br
+              %li Include an email opt-in
+              %br
+              %li Run the contest for at least 2 weeks
+              %br
+              %li Use referral features & social incentives             
+              %br
+              %li Allow people to enter multiple times
+              %br
+              %li Promote like crazy
+              %br
+              = link_to application_download_pdf_path do
+                .btn.btn-xs.btn-info
+                  Download Doc

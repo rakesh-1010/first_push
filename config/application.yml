@@ -1,0 +1,12 @@
+development:
+  SECRET_KEY_BASE: 3f0c76e0ee95df1569ab21b2b51488fd8d77db668ac97b35af13466056cf603f52ea7d1748d5a74a5d0901127ba1a9e66a0f5d8c9561741ce911ae7fb39d0b40
+  SWEEP_HOST: "http://localhost:3000"
+  FB_APP_ID: "476759812503734"
+  FB_APP_SECRET_KEY: "1652e27393ad8503e3bac37431ff9dfd"
+  GMAIL_USERNAME: "birdvision17@gmail.com"
+  GMAIL_PASSWORD: "birdvision@wtc"
+
+production:
+  SWEEP_HOST: "https://stag-sweepstakes.herokuapp.com"
+  FB_APP_ID: "476759812503734"
+  FB_APP_SECRET_KEY: "1652e27393ad8503e3bac37431ff9dfd" 

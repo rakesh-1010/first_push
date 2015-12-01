@@ -1,0 +1,9 @@
+%html
+  %head
+    %title Sweepstakes
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css", :rel => "stylesheet"}
+    = stylesheet_link_tag "application" , :media => "all"
+    = csrf_meta_tags
+    = javascript_include_tag "application"
+  %body
+    = yield

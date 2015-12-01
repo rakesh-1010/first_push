@@ -1,0 +1,14 @@
+.bootstrap-frm.email_template{:role => "form"}
+  = form_for :data, :url => send_email_link_sweepstakes_path , :method => :post, :html => {:id => 'approve_form', :class => 'form-horizontal'} do |f|
+    .email-heading
+      %h3 Send Email
+    .row
+      .col-xs-6
+        %textarea{:name => "email_address", :cols => "40", :rows => "5", :placeholder => "Enter comma seperated email address"}
+    .row
+      .col-sm-offset-0.col-sm-10
+        %br
+        %button.btn.btn-sm.btn-default{:type => "submit"}
+          %i.fa.fa-mail-forward
+          %strong Send Email
+    %input{:name => "link", :type => "hidden", :value => "#{@sweepstake.sweepstake_link}"}/

@@ -1,0 +1,145 @@
+.container-narrow
+  %hr
+    %ul.nav.nav-tabs
+      %li.active
+        %a{"data-toggle" => "tab", :href => "#setup"}
+          %i.fa.fa-cog
+          Sweepstake Setup
+      %li
+        %a{"data-toggle" => "tab", :href => "#entry"}
+          %i.fa.fa-pencil
+          Select Entry Option
+      %li
+        %a{"data-toggle" => "tab", :href => "#theme"}
+          %i.fa.fa-camera-retro
+          Select Theme   
+    #myTabContent.tab-content
+      #setup.tab-pane.active.in
+        %br
+        .bootstrap-frm.pull-left
+          .row
+            .col-lg-4
+              = f.label :sweepstake_name, :class => "control-label"
+            .col-lg-8
+              = f.text_field :sweepstake_name, :class => "form-control input-sm"
+          %br
+            .row
+              .col-xs-4
+                = f.label :start_date, :class => "control-label"
+              .col-xs-8
+                .form-group
+                  .input-group
+                    = f.text_field :start_date, :class => "form-control input-sm",:id => 'datepicker'
+                    %span.input-group-addon{:onclick => "$('#datepicker').datepicker();$('#datepicker').datepicker('show');"}
+                      %i.glyphicon.glyphicon-calendar
+            %br
+              .row
+                .col-xs-4
+                  = f.label :end_date, :class => "control-label"
+                .col-xs-8
+                  .form-group
+                    .input-group
+                      = f.text_field :end_date, :class => "form-control input-sm", :id => "datepicker1"
+                      %span.input-group-addon{:onclick => "$('#datepicker1').datepicker();$('#datepicker1').datepicker('show');"}
+                        %i.glyphicon.glyphicon-calendar    
+          %br
+            .row
+              .col-xs-4
+                = f.label :prize_name, :class => "control-label"
+              .col-xs-8
+                = f.text_field :prize_name, :class => "form-control input-sm"
+          %br
+            .row
+              .col-xs-4
+                = f.label :prize_image, :class => "control-label"
+              .col-xs-8
+                = f.file_field :prize_image, :class => "form-control input-sm"
+                - if @sweepstake.prize_image.nil?
+                  = @sweepstake.prize_image_file_name
+          
+            
+                   
+        
+      #entry.tab-pane.fade
+        %br
+        .bootstrap-frm.pull-left
+          %br
+            .row
+              .col-xs-4
+                = f.label :winner_count, :class => "control-label"
+              .col-xs-8
+                = f.text_field :winner_count, :class => "form-control input-sm"
+            %br
+              .row
+                .col-xs-4
+                  = f.label :entry_option_name, :class => "control-label"
+                .col-xs-8
+                  = f.collection_select :entry_option_id , EntryOption.all , :id , :entry_option_name , :prompt => "Select option", :html_options => {:onchange => "checkEntryOption();"}
+                  = link_to "What is this?","#", data: {toggle: "tooltip", placement: "bottom" }, title: "Qualified_entry:User needs to answer question to qualify.\nFacebook_entry:User need to login via facebook to enter contest",style: "color: crimson"
+            %br
+              #question.row{:style => "display: none;"}
+                .col-xs-4
+                  = f.label :question, :class => "control-label"
+                .col-xs-8 
+                  = f.text_field :question, :class => "form-control input-sm"
+            %br
+              .row
+                .col-xs-4
+                  = f.label :rules, "Terms and Conditions", :class => "control-label"
+                .col-xs-8
+                  = f.file_field :rules, :class => "form-control input-sm"
+                - if @sweepstake.rules.nil?
+                  = @sweepstake.rules_file_name
+                = f.hidden_field :admin_user_id, :value => current_admin_user.id
+
+
+      #theme.tab-pane.fade        
+        .col-md-2           
+          = f.radio_button :theme,"comic" 
+          %h3 Comic         
+          = image_submit_tag("comic_sel.png",:style => "height: 200px; width: 133px ",:class => "on-hover")     
+          %br/
+        .col-md-2
+          = f.radio_button :theme,"rain" 
+          %h3 Rain
+          = link_to (image_tag "rain_sel.png", :style => "height: 200px",:class => "on-hover" ), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "rain")
+          %br/
+        .col-md-2
+          %h3 Night
+          = link_to (image_tag "night_sel.png", :style => "height: 200px",:class => "on-hover" ), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "night")
+          %br/
+        .col-md-2
+          .row
+            %h3 Paper
+            = link_to (image_tag "paper_sel.png", :style => "height: 200px",:class => "on-hover" ), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "paper")
+            %br/
+        .col-md-2
+          .row
+            %h3 Money
+            = link_to (image_tag "money_sel.png", :style => " height: 200px",:class => "on-hover"), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "money")
+            %br/
+        .col-md-2
+          .row
+            %h3 Simple
+            = link_to (image_tag "basic_sel.png", :style => " height: 200px",:class => "on-hover"), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "basic")
+            %br/
+        .col-md-2
+          .row
+            %h3 Holi
+            = link_to (image_tag "color.png", :style => " height: 200px",:class => "on-hover"), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "holi")
+        .col-md-2
+          .row
+            %h3 Valentines
+            = link_to (image_tag "love.png", :style => " height: 200px",:class => "on-hover"), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "love")
+        .col-md-2
+          .row
+            %h3 Diwali
+            = link_to (image_tag "deepali.png", :style => " height: 200px",:class => "on-hover"), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "firework")
+        .col-md-2
+          .row
+            %h3 Christmas
+            = link_to (image_tag "christmas_sel.png", :style => " height: 200px",:class => "on-hover"), theme_select_sweepstakes_path(:id => @sweepstake.id,:theme => "christmas")
+           
+              
+
+          

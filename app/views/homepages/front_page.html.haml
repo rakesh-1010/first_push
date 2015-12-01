@@ -1,0 +1,329 @@
+%body#page-top.index
+  / Navigation
+  %nav.navbar.navbar-default.navbar-fixed-top
+    .container
+      / Brand and toggle get grouped for better mobile display
+      .navbar-header.page-scroll
+        %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => "#page-top"} Sweepstakes
+      / Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li.page-scroll
+            %a{:href => "#home"} Home
+          %li.page-scroll
+            %a{:href => "#about"} About
+          %li.page-scroll
+            %a{:href => "/admin_user/sign_in"} Login
+      / /.navbar-collapse
+    / /.container-fluid
+  / Header
+  %header.home-page
+    .container
+      .row
+        .col-lg-12
+          %img.img-responsive{:alt => "", :src => "/assets/images.jpg"}
+            .intro-text
+              %span.name Start Sweepstakes
+              %hr.star-light
+                %span.skills Sweepstakes - Contests - Users
+  / Portfolio Grid Section
+  %section.home-page#portfolio
+    .container
+      .row
+        .col-lg-12.text-center
+          %h2 Sweepstake Features
+          %hr.star-primary
+      .row
+        .col-sm-4.portfolio-item
+          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal1"}
+            .caption
+              .caption-content
+                %i.fa.fa-search-plus.fa-3x
+            %img.img-responsive{:alt => "", :src => "/assets/onemillion-goldcoin.jpg"}
+        .col-sm-4.portfolio-item
+          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal2"}
+            .caption
+              .caption-content
+                %i.fa.fa-search-plus.fa-3x
+            %img.img-responsive{:alt => "", :src => "/assets/cake.png"}
+        .col-sm-4.portfolio-item
+          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal3"}
+            .caption
+              .caption-content
+                %i.fa.fa-search-plus.fa-3x
+            %img.img-responsive{:alt => "", :src => "/assets/ipad-4x3.jpg "}
+        .col-sm-4.portfolio-item
+          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal4"}
+            .caption
+              .caption-content
+                %i.fa.fa-search-plus.fa-3x
+            %img.img-responsive{:alt => "", :src => "/assets/game.png"}
+        .col-sm-4.portfolio-item
+          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal5"}
+            .caption
+              .caption-content
+                %i.fa.fa-search-plus.fa-3x
+            %img.img-responsive{:alt => "", :src => "/assets//safe.png"}
+        .col-sm-4.portfolio-item
+          %a.portfolio-link{"data-toggle" => "modal", :href => "#portfolioModal6"}
+            .caption
+              .caption-content
+                %i.fa.fa-search-plus.fa-3x
+            %img.img-responsive{:alt => "", :src => "/assets/submarine.png"}
+  / About Section
+  %section.home-page#about.success
+    .container
+      .row
+        .col-lg-12.text-center
+          %h2 About
+          %hr.star-light
+      .row
+        .col-lg-4.col-lg-offset-2
+          %p It is  currently designed for creating sweepstakes or online contests.On selecting the Sweepstake product one will be redirected to the homepage of Sweepstake module.
+        .col-lg-4
+          %p The homepage would give a brief overview of all  the modules highlighting their features and USPs. It would also have information about pricing of the product. A short video on how to get started can also  be uploaded as well.All major modules are listed below
+        / .col-lg-8.col-lg-offset-2.text-center
+        /   %a.btn.btn-lg.btn-outline{:href => "#"}
+        /     %i.fa.fa-download
+        /     Download Theme
+  / Contact Section
+
+  / Footer
+  %footer.text-center
+    .footer-above
+      .container
+        .row
+          .footer-col.col-md-4
+            %h3 Location
+            %p
+              508/509 World trade Center
+              %br Near Eon It Park, Kharadi, Pune.
+          .footer-col.col-md-4
+          .footer-col.col-md-4
+            %h3 About Sweepstakes
+            %p
+              Sweepstakes is a free to use, Chances to win more prizes. Theme created by
+              = succeed "." do
+                %a{:href => "http://startbootstrap.com"} SWEEPSTAKES CEM PLAY
+    .footer-below
+      .container
+        .row
+          .col-lg-12
+            Copyright &copy; Your Website Name 2015
+  / Scroll to Top Button (Only visible on small and extra-small screen sizes)
+  .scroll-top.page-scroll.visible-xs.visible-sm
+    %a.btn.btn-primary{:href => "#page-top"}
+      %i.fa.fa-chevron-up
+  / Portfolio Modals
+  #portfolioModal1.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+    .modal-content
+      .close-modal{"data-dismiss" => "modal"}
+        .lr
+          .rl
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .modal-body
+              %h2 Project Title
+              %hr.star-primary
+                %img.img-responsive.img-centered{:alt => "", :src => "assets/cabin.png"}
+                  %p
+                    Use this area of the page to describe your project. The icon above is part of a free icon set by
+                    = succeed "." do
+                      %a{:href => "https://sellfy.com/p/8Q9P/jV3VZ/"} Flat Icons
+                    On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                  %ul.list-inline.item-details
+                    %li
+                      Client:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} Start Bootstrap
+                    %li
+                      Date:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} April 2014
+                    %li
+                      Service:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} Web Development
+                  %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+                    %i.fa.fa-times
+                    Close
+  #portfolioModal2.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+    .modal-content
+      .close-modal{"data-dismiss" => "modal"}
+        .lr
+          .rl
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .modal-body
+              %h2 Project Title
+              %hr.star-primary
+                %img.img-responsive.img-centered{:alt => "", :src => "assets/cake.png"}
+                  %p
+                    Use this area of the page to describe your project. The icon above is part of a free icon set by
+                    = succeed "." do
+                      %a{:href => "https://sellfy.com/p/8Q9P/jV3VZ/"} Flat Icons
+                    On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                  %ul.list-inline.item-details
+                    %li
+                      Client:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} Start Bootstrap
+                    %li
+                      Date:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} April 2014
+                    %li
+                      Service:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} Web Development
+                  %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+                    %i.fa.fa-times
+                    Close
+  #portfolioModal3.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+    .modal-content
+      .close-modal{"data-dismiss" => "modal"}
+        .lr
+          .rl
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .modal-body
+              %h2 Project Title
+              %hr.star-primary
+                %img.img-responsive.img-centered{:alt => "", :src => "assets/circus.png"}
+                  %p
+                    Use this area of the page to describe your project. The icon above is part of a free icon set by
+                    = succeed "." do
+                      %a{:href => "https://sellfy.com/p/8Q9P/jV3VZ/"} Flat Icons
+                    On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                  %ul.list-inline.item-details
+                    %li
+                      Client:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} Start Bootstrap
+                    %li
+                      Date:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} April 2014
+                    %li
+                      Service:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} Web Development
+                  %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+                    %i.fa.fa-times
+                    Close
+  #portfolioModal4.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+    .modal-content
+      .close-modal{"data-dismiss" => "modal"}
+        .lr
+          .rl
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .modal-body
+              %h2 Project Title
+              %hr.star-primary
+                %img.img-responsive.img-centered{:alt => "", :src => "assets/game.png"}
+                  %p
+                    Use this area of the page to describe your project. The icon above is part of a free icon set by
+                    = succeed "." do
+                      %a{:href => "https://sellfy.com/p/8Q9P/jV3VZ/"} Flat Icons
+                    On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                  %ul.list-inline.item-details
+                    %li
+                      Client:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} Start Bootstrap
+                    %li
+                      Date:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} April 2014
+                    %li
+                      Service:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} Web Development
+                  %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+                    %i.fa.fa-times
+                    Close
+  #portfolioModal5.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+    .modal-content
+      .close-modal{"data-dismiss" => "modal"}
+        .lr
+          .rl
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .modal-body
+              %h2 Project Title
+              %hr.star-primary
+                %img.img-responsive.img-centered{:alt => "", :src => "assets/safe.png"}
+                  %p
+                    Use this area of the page to describe your project. The icon above is part of a free icon set by
+                    = succeed "." do
+                      %a{:href => "https://sellfy.com/p/8Q9P/jV3VZ/"} Flat Icons
+                    On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                  %ul.list-inline.item-details
+                    %li
+                      Client:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} Start Bootstrap
+                    %li
+                      Date:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} April 2014
+                    %li
+                      Service:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} Web Development
+                  %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+                    %i.fa.fa-times
+                    Close
+  #portfolioModal6.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+    .modal-content
+      .close-modal{"data-dismiss" => "modal"}
+        .lr
+          .rl
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            .modal-body
+              %h2 Project Title
+              %hr.star-primary
+                %img.img-responsive.img-centered{:alt => "", :src => "assets/submarine.png"}
+                  %p
+                    Use this area of the page to describe your project. The icon above is part of a free icon set by
+                    = succeed "." do
+                      %a{:href => "https://sellfy.com/p/8Q9P/jV3VZ/"} Flat Icons
+                    On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                  %ul.list-inline.item-details
+                    %li
+                      Client:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} Start Bootstrap
+                    %li
+                      Date:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} April 2014
+                    %li
+                      Service:
+                      %strong
+                        %a{:href => "http://startbootstrap.com"} Web Development
+                  %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+                    %i.fa.fa-times
+                    Close
+  / Plugin JavaScript
+  %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"}
+  %script{:src => "/assets/js/classie.js"}
+  %script{:src => "/assets/js/cbpAnimatedHeader.js"}
+  / Contact Form JavaScript
+  %script{:src => "/assets/js/jqBootstrapValidation.js"}
+  %script{:src => "/assets/js/contact_me.js"}
+  / Custom Theme JavaScript
+  %script{:src => "/assets/js/freelancer.js"}

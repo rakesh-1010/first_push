@@ -1,0 +1,32 @@
+.container
+  .row
+    .col-xs-12.col-sm-8.col-md-6.col-sm-offset-2.col-md-offset-2
+      =form_for(:admin_user, :url => admin_path(:id => @admin_user.id),:method => :put ,:html => {:multipart => true}) do |f|
+        %h2
+          Edit Admin User
+        %hr.colorgraph
+          .row
+            .col-xs-12.col-sm-6.col-md-6
+              .form-group
+                = f.text_field :name, autofocus: true,:class =>"form-control input-lg",:name => "name", :placeholder => "Name", :tabindex => "1", :type => "text"
+            .col-xs-12.col-sm-6.col-md-6
+              .form-group
+                = f.text_field :mobile_number, autofocus: true,:class =>"form-control input-lg",:name => "mobile_number", :placeholder => "Mobile Number", :tabindex => "1", :type => "text"
+          .form-group
+            = f.email_field :email, autofocus: true,:class =>"form-control input-lg",:name => "email", :placeholder => "Email Address", :tabindex => "1", :type => "text",:disabled => "true"
+          .form-group
+            = f.file_field :avatar  
+          %hr.colorgraph
+            .row
+              .col-xs-12.col-md-6
+                .actions
+                  =f.submit "Update",:class =>"btn btn-primary btn-block btn-lg",:tabindex => "7", :type => "submit"
+  
+
+
+
+
+
+
+
+

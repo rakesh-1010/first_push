@@ -1,0 +1,6 @@
+%h2 Organization Details
+=form_for(:client, :url => clients_path, :method => :post, :html => {:id => 'client_form', :class => 'form-horizontal'}) do |f|
+  -#= f.hidden_field :admin_user_id , :value => current_admin_user.id
+  = render(:partial => 'create_client', :locals => {:f => f})
+  - Rails.logger.info("*******************************88#{request.remote_ip}")
+  

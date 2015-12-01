@@ -1,0 +1,3 @@
+%h1 Create Sweepstake
+=form_for(:sweepstake, remote: true, :url => sweepstakes_path, :method => :post, :html => {:multipart => true, :id => 'sweepstake'}) do |f|
+  = render(:partial => 'sweepstake_create', :locals => {:f => f})

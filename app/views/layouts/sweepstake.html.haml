@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %title Sweepstake
+    = stylesheet_link_tag 'loader', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'sweepstake_iframe', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Lobster", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Poiret+One", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Righteous", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Bilbo", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Crafty+Girls", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Fugaz+One", :rel => "stylesheet", :type => "text/css"}
+    / Optional theme
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css", :rel => "stylesheet"}
+    / Latest compiled and minified JavaScript
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
+    -#%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"}
+    %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"}
+  %body
+    = yield
+    :javascript
+      if(!window.jQuery)
+      {
+         var script = document.createElement('script');
+         script.type = "text/javascript";
+         script.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js";
+         document.getElementsByTagName('head')[0].appendChild(script);
+         
+      }
+      

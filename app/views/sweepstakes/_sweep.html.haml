@@ -1,0 +1,46 @@
+= hidden_field_tag :direction, params[:direction]
+= hidden_field_tag :sort, params[:sort]
+.table-responsive
+  %table.table.table-hover
+    %thead
+      %tr
+        %th
+          = sortable("sweepstake_name","Sweepstake Name")
+        - if is_superadmin?
+          %th Client's Email
+        %th Start Date
+        %th End Date
+        %th Actions
+        %th Participants
+        %th Status
+    %tbody
+      - @sweepstakes.each do |sweepstake|
+        %tr{:class=> "#{cycle("info","default")}"}
+          %td
+            = sweepstake.sweepstake_name
+          - if is_superadmin?
+            %td
+              = admin_user_email(sweepstake.admin_user_id)
+          %td
+            = sweepstake.start_date
+          %td
+            = sweepstake.end_date
+          %td
+            = link_to sweepstake_path(:id => sweepstake.id) do
+              .btn.btn-xs.btn-primary
+                Preview
+            = link_to edit_sweepstake_path(:id => sweepstake.id) do
+              .btn.btn-xs.btn-default
+                Edit
+            = link_to sweepstake_path(:id => sweepstake.id),:method => :delete, :data => {confirm: 'Are you sure' } do
+              .btn.btn-xs.btn-danger
+                Delete
+            %br/
+          %td
+            = link_to view_participant_participants_path(:id => sweepstake.id) do
+              .btn.btn-xs.btn-info
+                All Entries(#{sweepstake.participants.count})
+          %td
+            .sweep-status
+              = sweepstake_status(sweepstake)
+  = will_paginate @sweepstakes, renderer: BootstrapPagination::Rails

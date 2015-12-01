@@ -1,0 +1,3 @@
+- winner = Participant.joins(:winner).where(:sweepstake_id => params[:id])
+= render(:partial => 'winner', :locals => {:winner => winner })
+  

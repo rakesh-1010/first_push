@@ -1,0 +1,32 @@
+.non-semantic-protector
+  %h1.ribbon
+    %strong.ribbon-content All Participants
+%br/
+.row
+  = link_to participants_path(format: 'csv') do
+    .btn.btn-primary.pull-right
+      %i.fa.fa-download
+      %strong Download CSV
+%br
+.table-responsive
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Email
+        %th Number
+        %th{style: "text-align: center"} Delete
+    %tbody
+      - @participants.each do |participant|
+        %tr{:class=> "#{cycle("info","default")}"}
+          %td
+            = participant.participant_name
+          %td
+            = participant.email
+          %td
+            = participant.participant_number
+          %td{align: "center"}
+            = link_to participant_path(:id => participant.id),:method => :delete, :data => {confirm: 'Are you sure' } do
+              %i.fa.fa-trash
+
+  = will_paginate @participants, renderer: BootstrapPagination::Rails

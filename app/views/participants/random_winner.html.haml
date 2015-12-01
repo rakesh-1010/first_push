@@ -1,0 +1,3 @@
+= render(:partial => 'winner', :locals => {:winner => @winner_record })
+.btn.btn-info
+  = link_to "Email Winners", email_winner_participants_path(:id => @sweepstake.id)

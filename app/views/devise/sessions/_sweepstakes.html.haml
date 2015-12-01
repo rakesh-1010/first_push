@@ -1,0 +1,294 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    /[if IE]
+    %title sweepstakes
+    / Bootstrap Style
+    %link{:href => "/assets/css/bootstrap.css", :rel => "stylesheet"}/
+    / Font-Awesome Style
+    %link{:href => "http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css", :rel => "stylesheet"}/
+    / Animation Style
+    %link{:href => "/assets/css/animate.css", :rel => "stylesheet"}/
+    / Pretty Photo Style
+    %link{:href => "/assets/css/prettyPhoto.css", :rel => "stylesheet"}/
+    / Custom Style
+    %link{:href => "/assets/css/style.css", :rel => "stylesheet"}/
+  %body
+    #pre-div
+      #loader
+    / /. PRELOADER END
+    .navbar.navbar-default.navbar-fixed-top.move-me
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"}
+            %navbar-brand-logo{:alt => "", :src => "#"}Sweepstakes
+        .navbar-collapse.collapse.move-me
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{:href => "#home"}
+                HOME
+            %li
+              %a{:href => "#about"}
+                ABOUT
+            %li
+              %a{:href => "#testimonials"}
+                TESTIMONIALS
+            %li
+              %a{:href => "#help"}
+                WALKTHROUGH
+            %li
+              %a{:href => "#contact"}
+                CONTACT
+    / ./ NAV BAR END
+    #home
+      .overlay#sweep-home
+        .container
+          .row
+            .col-lg-9.col-md-9.head-text
+              %h1#divDisp
+              %span
+                %i.fa.fa-check
+                Generate advertising content at a reasonable cost 
+              %span
+                %i.fa.fa-check
+                Build lead list for your business
+              %span
+                %i.fa.fa-check
+                Strengthen relationship with customers
+              %span
+                %i.fa.fa-check
+                A valuable market research tool
+              %span
+                %i.fa.fa-check
+                Create "BUZZ" about products
+            .col-lg-3.col-md-3
+              .div-trans.text-center
+                %h3 LOGIN
+                .col-lg-12.col-md-12.col-sm-12
+                  .form-group
+                    = f.text_field :email, :class => "form-control",:placeholder => "Email", :required => "required"
+                  .form-group
+                    = f.password_field :password, :class => "form-control",:placeholder => "Password", :required => "required"
+                  .form-group
+                    = f.submit "Login", :class => "btn btn-success btn-block btn-lg"
+                    = link_to "Sign Up", new_admin_user_registration_path,  :class => "btn btn-primary btn-block btn-lg"
+    / ./ HOME SECTION END
+    #about
+      .container
+        .row.text-center
+          .col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2.col-sm-8.col-sm-offset-2.sub-head
+            %h2
+              %strong WHY DO YOU NEED SWEEPSTAKES
+            -# %p.sub-head Lorem ipsum dolor sit amet, consectetur adipiscing elit onec molestie non sem vel condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        .row
+          .col-lg-4.col-md-4
+            .media
+              .pull-left
+                %i.fa.fa-archive.fa-4x
+              .media-body
+                %h3.media-heading Advertising content
+                %p
+                  Creative sweepstakes where participants submit photos, recipes, or essays about products can at times be used as 
+                  advertising.In other words, instead of paying an ad agency to produce content, sponsors can pass the money that they would otherwise spend directly to their loyal customers in the form of prizes, benefiting sweepers and corporations alike.
+            .media
+              .pull-left
+                %i.fa.fa-gamepad.fa-4x
+              .media-body
+                %h3.media-heading  Strengthen relationship
+                %p
+                  Sweepstakes strengthen the company-to-consumer relationship by building a sense of fun, by entertaining people while informing them about the company's products, and by giving customers a benefit for interacting with the company in the form of fun prizes. The chance to win creates a positive feeling toward the company in their visitors' minds, which can then carry over to a brighter attitude toward the sponsor's products
+          .col-lg-4.col-md-4
+            / #carousel-slider.carousel.slide{"data-ride" => "carousel"}
+            /   .carousel-inner
+            /     .item
+            /       %img.img-thumbnail{:alt => "", :src => "/assets/img/slider/gift.jpg"}/
+            /     .item
+            /       %img.img-thumbnail{:alt => "", :src => "/assets/img/slider/2.jpg"}/
+            /     .item.active
+            /       %img.img-thumbnail{:alt => "", :src => "/assets/img/slider/3.jpg"}/
+            /   / INDICATORS
+            /   %ol.carousel-indicators
+            /     %li{"data-slide-to" => "0", "data-target" => "#carousel-slider"}
+            /     %li{"data-slide-to" => "1", "data-target" => "#carousel-slider"}
+            /     %li.active{"data-slide-to" => "2", "data-target" => "#carousel-slider"}
+            .media
+              .pull-left
+                %i.fa.fa-bell.fa-2x
+              .media-body
+                %h3.media-heading Create "BUZZ" about product 
+                %p
+                  Word-of-mouth marketing is becoming more powerful than ever, since people can tell friends about things that capture their interest instantly through emails, blogs, Facebook, Twitter, and newsletters. Sweepstakes encourage people to talk about a company, spreading the word about their products and services.
+    
+          .col-lg-4.col-md-4
+            .media
+              .pull-left
+                %i.fa.fa-users.fa-4x
+              .media-body
+                %h3.media-heading Build lead list 
+                %p
+                  An email marketing list is a great way for companies to strike up a dialog with the customers. This is why sweepstakes usually include the chance to opt-in to the sponsor's mailing list. Because newsletters are a very valuable form of contacting potential customers, sweepstakes are instrumental at expanding the mailing list.
+
+            .media
+              .pull-left
+                %i.fa.fa-gears.fa-4x
+              .media-body
+                %h3.media-heading Valuable market research tool
+                %p
+                  Sponsors can get valuable insight about how their potential customers think, go about their days, or use the company's products around the house, through an optional or required survey questions while filling out sweepstakes entry forms. This can help them focus their advertising to be more effective.
+        .row.pad-top-botm.wow.flipInX.animated{"data-wow-delay" => "0.7s"}
+          .col-lg-8.col-md-8.col-sm-8
+            -# %h3
+              -# %strong What is our profile ?
+            -# %p
+              -# Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              -# Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+              -# Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            -# %p
+              -# Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              -# Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+              -# Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+            -# %p
+              -# Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              -# Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+              -# Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+          -# .col-lg-4.col-md-4.col-sm-4.text-center
+            -# %i.fa.fa-camera.big-icon
+    / ./ ABOUT SECTION END
+    .donars-section
+      .overlay
+        .container
+          .row
+            .col-lg-12.col-md-12
+              #testimonials.carousel.slide{"data-ride" => "carousel"}
+                .container
+                  .row.text-center
+                    .col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2.col-sm-8.col-sm-offset-2
+                      %h2
+                        %strong TESTIMONIALS
+                %ol.carousel-indicators
+                  %li{"data-slide-to" => "0", "data-target" => "#testimonials"}
+                  %li{"data-slide-to" => "1", "data-target" => "#testimonials"}
+                  %li.active{"data-slide-to" => "2", "data-target" => "#testimonials"}
+                .carousel-inner
+                  .item
+                    .container.center
+                      .col-lg-6.col-lg-offset-3.col-md-6.col-md-offset-3.slide-custom
+                        %h4
+                          %i.fa.fa-quote-left>
+                          Coming Soon
+                          %i.fa.fa-quote-right
+                        .user-img.pull-right
+                          %img.img-circle.image-responsive{:alt => "", :src => "/assets/img/user2.png"}/
+                        %h5.pull-right
+                          %strong.c-black Kapil Rana
+                  .item
+                    .container.center
+                      .col-lg-6.col-lg-offset-3.col-md-6.col-md-offset-3.slide-custom
+                        %h4
+                          %i.fa.fa-quote-left>
+                          Coming Soon
+                          %i.fa.fa-quote-right
+                        -# .user-img.pull-right
+                          -# %img.img-circle.image-responsive{:alt => "", :src => "/assets/img/user.png"}/
+                        -# %h5.pull-right
+                          -# %strong.c-black Ansuman Dani
+                  .item.active
+                    .container.center
+                      .col-lg-6.col-lg-offset-3.col-md-6.col-md-offset-3.slide-custom
+                        %h4
+                          %i.fa.fa-quote-left>
+                          Coming Soon
+                          %i.fa.fa-quote-right
+                        -# .user-img.pull-right
+                          -# %img.img-circle.image-responsive{:alt => "", :src => "/assets/img/user3.png"}/
+                        -# %h5.pull-right
+                          -# %strong.c-black Pallavi Das
+    / ./ DONARS TESTIMONIALS END
+    / ./ GALLERY/PORTFOLIO SECTION END
+    #help
+      .overlay
+        .container
+          .row.text-center
+            .col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2.col-sm-8.col-sm-offset-2
+              %h2
+                %strong WALKTHROUGH
+              %p.sub-head Watch this video and create your own sweepstake.
+          .row
+            .col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2
+              / %iframe.vedio-style.wow.rotateIn.animated{"data-wow-delay" => "0.4s", :src => "http://player.vimeo.com/video/18312392"}
+            -# .col-lg-4.col-md-4{:style => "padding-top: 50px;"}
+              -# .media.wow.rotateIn.animated{"data-wow-delay" => "0.5s"}
+                -# .pull-left
+                  -# %i.fa.fa-star-o.fa-4x
+                -# .media-body
+                  -# %h3.media-heading Watch This Vedio
+                  -# %p
+                    -# Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.
+                    -# Aenean faucibus luctus enim.
+              -# .media.wow.rotateIn.animated{"data-wow-delay" => "0.6s"}
+                -# .pull-left
+                  -# %i.fa.fa-history.fa-4x
+                -# .media-body
+                  -# %h3.media-heading Donate Some Money
+                  -# %p
+                    -# Aenean faucibus luctus enim. Duis quis sem risu suspend lacinia elementum nunc.
+                    -# Aenean faucibus luctus enim.
+    / ./ HELP SECTION END
+    #contact
+      .container
+        .row.text-center
+          .col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2.col-sm-8.col-sm-offset-2
+            %h2.wow.rollIn.animated{"data-wow-delay" => "0.3s"}
+              %strong CONTACT US
+            %p.sub-head 
+            %p.sub-head.wow.rotateIn.animated{"data-wow-delay" => "0.4s"}
+              %strong ADDRESS :
+              BirdVision Consulting Pvt. Ltd.,508-09, Tower-I, World Trade Center,Near EON Free Zone, Kharadi,Pune, Maharashtra 411014.India
+        -# .row.text-center.wow.rotateIn.animated{"data-wow-delay" => "0.4s"}
+          -# .col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2.col-sm-8.col-sm-offset-2
+            -# %a{:href => "#"}
+              -# %img{:alt => "", :src => "/assets/img/Social/facebook.png"}/
+            -# %a{:href => "#"}
+              -# %img{:alt => "", :src => "/assets/img/Social/google-plus.png"}/
+            -# %a{:href => "#"}
+              -# %img{:alt => "", :src => "/assets/img/Social/twitter.png"}/
+        -# .row.pad-top-botm
+          -# .col-lg-8.col-lg-offset-2.col-md-8.col-md-offset-2.col-sm-8.col-sm-offset-2
+            -# %form
+              -# .form-group
+                -# %input.form-control.wow.rotateIn.animated{"data-wow-delay" => "0.5s", :placeholder => "Your Name", :required => "required", :type => "text"}/
+              -# .form-group
+                -# %input.form-control.wow.rotateIn.animated{"data-wow-delay" => "0.6s", :placeholder => "Your Email", :required => "required", :type => "text"}/
+              -# .form-group
+                -# %textarea.wow.rotateIn.animated.form-control{"data-wow-delay" => "0.7s", :name => "message", :placeholder => "Message", :required => "required", :style => "min-height: 150px;"}
+              -# .form-group
+                -# %button.btn.btn-success.btn-block.btn-lg.wow.rotateIn.animated{"data-wow-delay" => "0.8s", :type => "submit"} SUBMIT REQUEST
+    / ./ CONTACT SECTION END
+    #footser-end
+      .container
+        .row
+          .col-lg-12.col-md-12
+            \© 2015 www.cemplay.com | by
+            %a{:href => "http://www.birdvision.in/", :style => "color:#fff;", :target => "_blank"} birdvision.in
+    / ./ FOOTER SECTION END
+    / Jquery Core Script
+    %script{:src => "/assets/js-sweep/jquery-1.10.2.js"}
+    / Core Bootstrap Script
+    %script{:src => "/assets/js-sweep/bootstrap.js"}
+    / WOW Script
+    %script{:src => "/assets/js-sweep/wow.min.js"}
+    / Scrolling Script
+    %script{:src => "/assets/js-sweep/jquery.easing.min.js"}
+    / PrettyPhoto Script
+    %script{:src => "/assets/js-sweep/jquery.prettyPhoto.js"}
+    %script{:src => "/assets/js/scrollReveal.js"}
+    / Custom Scripts
+    %script{:src => "/assets/js-sweep/custom.js"}

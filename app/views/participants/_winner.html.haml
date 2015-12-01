@@ -1,0 +1,19 @@
+.non-semantic-protector
+  %h1.ribbon
+    %strong.ribbon-content Winners
+.table-responsive
+  %table.table.table-bordered
+    %thead
+      %tr{:class=> "#{cycle("info","default")}"}
+        %th Name
+        %th Email
+        %th Number
+    %tbody    
+      - winner.each do |w|
+        %tr{:class=> "#{cycle("info","default")}"}
+          %td
+            = w.participant_name
+          %td
+            = w.email
+          %td
+            = w.participant_number

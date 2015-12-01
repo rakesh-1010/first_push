@@ -1,0 +1,19 @@
+%a{:href => "#", :onclick => "this.style.backgroundColor='#009900';this.style.color='#FFFFFF';"} Paint it green
+
+%a#sweepframe{:href => "https://production-sweepstakes.herokuapp.com/display/c9b506", :rel => "nofollow"} Sweepstake
+%script{:async => "true", :src => "https://production-sweepstakes.herokuapp.com/sweepstake_iframe.js", :type => "text/javascript"}
+= link_to new_sweepstake_path do
+  .btn.btn-success
+    %i.fa.fa-plus
+    %strong Create new
+    
+
+  %br
+    .non-semantic-protector
+      %h1.ribbon
+        %strong.ribbon-content Your Sweepstakes 
+    = form_tag sweepstakes_path, :method => 'get', id: "sweep_search" do
+      %p 
+        = text_field_tag :search, params[:search]
+        = submit_tag "Search", :name => nil
+      #sweep= render 'sweep'

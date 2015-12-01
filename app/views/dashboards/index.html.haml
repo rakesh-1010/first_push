@@ -1,0 +1,81 @@
+= link_to new_sweepstake_path do
+  .btn.btn-success
+    %i.fa.fa-plus
+    %strong Create Sweepstake
+.content-wrapper
+  / Content Header (Page header)
+  %section.content-header
+    .non-semantic-protector
+      %h1.ribbon
+        %strong.ribbon-content Dashboard
+        
+  %br  
+  / Main content
+  %section.content
+    / Small boxes (Stat box)
+    .row
+      .col-lg-3.col-xs-6
+        / small box
+        .small-box.bg-aqua
+          .inner
+            %h3 
+              #{@sweepstakes.count}
+            %p Sweepstakes
+          .icon.effectfront
+            %span.fa.fa-gift
+          %a.small-box-footer{:href => "/sweepstakes"}
+            More info
+            %i.fa.fa-arrow-circle-right
+      / ./col
+      -#.col-lg-3.col-xs-6
+        -#/ small box
+        -#.small-box.bg-blue
+          -#.inner
+            -#%h3
+              -#5
+            -#%p Contest
+          -#.icon.effectfront
+            -#%span.fa.fa-smile-o
+          -#%a.small-box-footer{:href => "#"}
+            -#More info
+            -#%i.fa.fa-arrow-circle-right
+      -#/ ./col
+      .col-lg-3.col-xs-6
+        / small box
+        .small-box.bg-green
+          .inner
+            %h3
+              #{@participants.count} 
+            %p User Registrations
+          .icon.effectfront
+            %span.fa.fa-user
+          %a.small-box-footer{:href => "/participants"}
+            More info
+            %i.fa.fa-arrow-circle-right
+      / ./col
+      .col-lg-3.col-xs-6
+        / small box
+        .small-box.bg-red
+          .inner
+            %h3
+              #{@winner.count}
+            %p Winners 
+          .icon.effectfront
+            %span.fa.fa-trophy
+          %a.small-box-footer{:href => "/participants/all_winners"}
+            More info
+            %i.fa.fa-arrow-circle-right
+      -# / ./col
+      -# .col-lg-3.col-xs-6
+        -# / small box
+        -# .small-box.bg-orange
+          -# .inner
+            -# %h3
+              -# 3
+            -# %p Available Tickets 
+          -# .icon.effectfront
+            -# %span.ion-android-star-half
+          -# %a.small-box-footer{:href => "#"}
+            -# More info
+            -# %i.fa.fa-arrow-circle-right
+-#   

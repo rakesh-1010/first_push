@@ -1,0 +1,31 @@
+.container-fluid
+  .container
+    #login
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        .signup_frm
+          .signup-heading
+            Free trial SignUp
+        %fieldset.clearfix
+          %p
+            %span.fontawesome-user
+            = f.text_field :name, :required => "true", :placeholder => "Name"
+          %p
+            %span.fontawesome-envelope
+            = f.text_field :email, :required => "true", :type => "text", :placeholder => "Email Address"
+          / JS because of IE support; better: placeholder="Username"
+          %p
+            %span.fontawesome-camera
+            = f.file_field :avatar, :placeholder => "choose profile picture"
+          %p
+            %span.fontawesome-lock
+            = f.password_field :password, :placeholder => " Create Password",:required => "true", :type => "password"
+          %p
+            %span.fontawesome-lock
+            = f.password_field :password_confirmation, :placeholder => " Confirm Your Password",:required => "true", :type => "password"
+          %p
+            %span.fontawesome-phone
+            = f.text_field :mobile_number, :placeholder => "Mobile Number",:required => "true"
+          -# / JS because of IE support; better: placeholder="Password"
+          %p
+            = f.submit "submit", :value => "Sign Up" 

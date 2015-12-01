@@ -1,0 +1,17 @@
+%html
+  %head
+    :css
+      body{
+            background: url(/assets/pigeon.jpg);
+            background-repeat: no-repeat;
+              background-size: contain;
+              height: 100vh;
+              margin: 120px;  
+              font-style: italic;
+              z-index: -1;
+          }
+  %body
+    .peigon
+      %span{:style => "color:red;font-size:50px;font-weight:bold"} Error:
+      %br/
+      %span{:style => "color:yellow;font-size:50px;font-weight:bold"} Peigon Found

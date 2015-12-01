@@ -1,0 +1,8 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: sweepstake
+  username: root
+  password: bvc9090
+  host: 127.0.0.1
+  port: 3306

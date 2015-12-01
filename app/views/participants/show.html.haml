@@ -1,0 +1,60 @@
+!!!
+%html
+  %head
+    :css
+      div.disable-me{
+          pointer-events: none;
+         }
+      
+      body {
+          margin-left: 2cm;
+          margin-right: 2cm;
+      }
+      
+  %body
+    %h2 AD created
+    %b All Participants
+    %br/
+    .table-responsive
+      %table.table.table-bordered.table-hover
+        %thead
+          %tr.success
+            %th Name
+            %th Email
+            %th Number
+            %th Ip Address
+            %th Mark Winner
+        %tbody
+          - @participants.each do |participant|
+            %tr.info
+              %td
+                = participant.participant_name
+              %td
+                = participant.email
+              %td
+                = participant.participant_number
+              %td
+                = participant.current_sign_in_ip
+              - if (@winner_count < @sweepstake.winner_count)
+                %td= link_to "Select as Winner",manual_winner_participants_path(:sweepstake_id => participant.sweepstake_id ,:participant_id => participant.id)
+              - else
+                %td
+                  <div class="disable-me"
+                  %td= link_to "Select as Winner",manual_winner_participants_path(:sweepstake_id => participant.sweepstake_id ,:participant_id => participant.id)
+      %br
+        %b Total Winners:
+        %b= @sweepstake.winner_count
+        %br
+          %br
+            - if (@winner_count < @sweepstake.winner_count)
+              .btn.btn-warning
+                = link_to "Choose Winners Randomly",random_winner_participants_path(:id=>@sweepstake.id)
+                %br/
+            - else
+              .disable-me
+                = link_to "Choose Winners Randomly",random_winner_participants_path(:id=>@sweepstake.id)
+                %br/
+            .btn.btn-warning
+              = link_to "View winners ",view_winners_participants_path(:id=>@sweepstake.id)
+              %br/
+            / <b> Lucky Winner </b><br>

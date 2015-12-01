@@ -1,0 +1,6 @@
+.row
+  = render(:partial => 'winner', :locals => {:winner => @winner_record })
+  .btn.btn-default
+    = link_to "Email Winners",email_winner_participants_path(:id=>@sweepstake.id),{"data-no-turbolink" => ""}
+    %br/
+  %br

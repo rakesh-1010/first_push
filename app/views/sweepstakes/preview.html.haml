@@ -1,0 +1,93 @@
+- unless @sweepstake.nil?
+  .se-pre-con
+  .row#sweep-container
+    .col-xs-12#sweepstake-widget
+      .row#sweepstake-text
+        .col-xs-6#entries
+          %h3 #{Participant.where(:sweepstake_id => @sweepstake.id).count}
+          entries
+        .col-xs-6#day-remain
+          %h3 #{(@sweepstake.end_date.to_date - Date.today).to_i}
+          days remaining
+      .row
+        .col-xs-12#sweepstake-text
+          %h2 #{@sweepstake.sweepstake_name}
+          - if get_entry_option(@sweepstake) == "facebook_entry"
+            %h4 Login with facebook and win #{@sweepstake.prize_name.capitalize}
+          - if get_entry_option(@sweepstake) == "qualified_entry"
+            %h4 Submit your answer and win #{@sweepstake.prize_name.capitalize}
+        %p#hidden-bg-img{"data-url" => "#{@sweepstake.prize_image}", "data-theme" => "#{@sweepstake.theme}"}
+      .row#gift-wrapper
+      .container-fluid
+        .sweepstake
+          =form_for(:enroll, :url => "/participants/register", :method => :post, :html => {:id => 'register_form', :class => 'form-horizontal register'}) do |f|
+            .register_participant
+              - if get_entry_option(@sweepstake) == "facebook_entry"
+                .row
+                  .col-xs-2
+                  .col-xs-8#sweepstake-text
+                    .btn.btn-primary 
+                      %i.fa.fa-facebook
+                      Sign in with Facebook
+              - if get_entry_option(@sweepstake) == "qualified_entry"
+                .row
+                  .col-xs-1
+                  .col-xs-10#sweepstake-text
+                    %strong#question
+                      #{@sweepstake.question}
+                .row
+                  .col-xs-1
+                  .col-xs-10
+                    = f.text_field :answer, :placeholder => "Your Answer", :class => "form-control input-sm", :disabled => true
+                .row
+                  .col-xs-1
+                  .col-xs-5
+                    = f.text_field :participant_name, :placeholder => "Name", :class => "form-control input-sm", :disabled => true
+                  .col-xs-5
+                    = f.text_field :participant_number, :placeholder => "Mobile", :class => "form-control input-sm", :disabled => true
+                .row
+                  .col-xs-1
+                  .col-xs-10
+                    = f.text_field :email, :placeholder => "email id", :class => "form-control input-sm", :disabled => true
+                .row
+                  .col-xs-1
+                    = f.hidden_field :entry_option_id ,:value => @sweepstake.entry_option_id
+                  .col-xs-5
+                    = f.submit "Submit Answer",:class=> "btn btn-success", :onclick => "participantFormValidate();", :disabled => true
+                  .col-xs-5
+                    = link_to 'Terms & Conditions', @sweepstake.rules.url, :target => '_blank'
+                    %input#bg_color{:name => "key", :type => "hidden", :value => "#{@sweepstake.secure_key}", :disabled => true}
+              - if get_entry_option(@sweepstake) == "visit_page"
+                -Rails.logger.info("####################")
+                .row
+                  .col-xs-1
+                  .col-xs-10#sweepstake-text
+                    %strong#question
+                      Click on the link below to get an entry
+                    .row
+                      .col-xs-1
+                      .col-xs-10
+                        %a.btn.btn-info.btn-large.btn-embossed{:href => "http://google.com", :target => "_blank"}
+                          %i.fa.fa-share-square
+                          Click Here
+                    .row
+                      .col-xs-1
+                      .col-xs-10
+                        %button{:href => "/dashboards",:type => "button",:id=>"button2",:disabled => true}
+                          Continue            
+
+- else
+  .se-pre-con
+  .row#sweep-stop
+    .col-xs-12#sweepstake-widget
+      .row
+        .col-xs-12#sweepstake-text
+          %h2 Wait!
+          %h4 Please login first to see a preview.
+%script
+  $('#sweep-container').css('width', '399px');
+:javascript
+  if(window.opener) {
+    window.opener.location.reload(true);
+    window.close()
+  }
