@@ -17,7 +17,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql2
+  adapter: pg
   encoding: utf8
   database: sweepstake
   username: root
